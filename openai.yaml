@@ -1,0 +1,55 @@
+openapi: 3.0.1
+info:
+  title: Currency Converter Plugin
+  description: A plugin that allows the user to convert an amount from one currency to another using ChatGPT.
+  version: "v1"
+servers:
+  - url: http://localhost:7000
+paths:
+  /convert:
+    get:
+      operationId: convertCurrency
+      summary: Convert an amount from one currency to another
+      parameters:
+        - in: query
+          name: from
+          schema:
+            type: string
+          description: The currency to convert from
+        - in: query
+          name: to
+          schema:
+            type: string
+          description: The currency to convert to
+        - in: query
+          name: amount
+          schema:
+            type: number
+          description: The amount to convert
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/convertCurrencyResponse"
+        "500":
+          description: Error making request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+components:
+  schemas:
+    convertCurrencyResponse:
+      type: object
+      properties:
+        result:
+          type: number
+          description: The converted amount
+    errorResponse:
+      type: object
+      properties:
+        msg:
+          type: string
+          description: Error message
