@@ -1,19 +1,18 @@
-## About Sentimental
+## About Converter Plugin
 
-A web application that uses NLP(Natural Language Processing) to extract the emotion/sentiment of a piece of text
+A API built using Node.js and express. It's a currency conveter plugin for chatGPT that helps chatGPT get the latest currecy rate between 2 different currencies at 
+the prevailing exchange market rate.
 
 ## Project Specifications
 
-1. A user can add a text to the textbox and on submit to see an emoji that displays the emotion as either happy, sad or just neutral.
+1. A user can add the base currency, the target currency and the amount they would like to convert and see the corresponding amount in the target currency as a json response
+2. supported query parameters include from, to and amount.
 
 # Tech Used
 
 1. Node.js
 2. Express.js
-3. hbs.js used to create views for the frontend frontend
-4. natural (To tokenize a sentence into words and make a sentimental analysis.)
-5. SpellCorrector (Used to correct the spelling of words.)
-6. apos-to-lex (used to converts apostrophe-connecting words to their standard lexicon form)
+3. currencyconverter api
 
 How to start
 
