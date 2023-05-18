@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://currency-converter-chatgpt-plugin.onrender.com
 paths:
-  /convert:
+  /api/v1/convert:
     get:
       operationId: convertCurrency
       summary: Convert an amount from one currency to another
