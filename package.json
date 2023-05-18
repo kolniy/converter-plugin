@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "npm run build && node dist/server.js",
+    "build": "babel src -d dist",
     "dev": "env-cmd -f ./src/config/.dev.env nodemon --ignore --exec babel-node ./src/server.js"
   },
   "author": "kolawole olaniyi",
